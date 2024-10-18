@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# Проверка наличия аргумента
+if [ -z "$1" ]
+then
+  echo "Использование: log-archive <путь_к_директории_с_логами>"
+  exit 1
+fi
+
+LOG_DIR="$1"
+
+# Проверка существования директории логов
+if [ ! -d "$LOG_DIR" ]
+then
+  echo "Директория $LOG_DIR не найдена."
+  exit 1
+fi
+
+# Создание имени архива с датой и временем
+DATE_TIME=$(date +%Y%m%d_%H%M%S)
+ARCHIVE_NAME="logs_archive_${DATE_TIME}.tar.gz"
+
+# Создание директории для архивов
+ARCHIVE_DIR="archives"
+mkdir -p "$ARCHIVE_DIR"
+
+# Сжатие логов
+tar -czf "${ARCHIVE_DIR}/${ARCHIVE_NAME}" -C "$LOG_DIR" .
+
+# Логирование даты и времени архивации
+echo "Архивация выполнена: ${DATE_TIME}" >> "${ARCHIVE_DIR}/archive_log.txt"
+
+echo "Логи были архивированы в ${ARCHIVE_DIR}/${ARCHIVE_NAME}"
+
