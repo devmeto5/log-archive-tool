@@ -142,3 +142,4 @@ git push origin feature/your-feature-name
 Create a Pull Request
 
 Go to the original repository and click on 'New Pull Request'.
+# ssh_remote_server_setup_solutions
