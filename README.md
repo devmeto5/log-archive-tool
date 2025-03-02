@@ -6,7 +6,7 @@ A tool for archiving logs from the command line with date and time.
 
 # Log Archive Tool
 
-A command-line tool to archive logs with date and time stamps. This script compresses log files from a specified directory into a `tar.gz` archive and stores them in a new directory for easy management and future reference.
+A command-line tool to archive logs with date and time stamps. This script compresses log files from a specified directory into a `tar.gz` archive and stores them in a new directory for easy management and future reference
 
 ## Table of Contents
 
